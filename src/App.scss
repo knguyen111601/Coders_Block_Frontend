@@ -1,0 +1,98 @@
+$mocha: #967969;
+
+.mainSection {
+  margin-left: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Side Bar
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.sideBar {
+  background-color: $mocha;
+  height: 100vh;
+  width: 20%;
+  position: fixed;
+  box-shadow: 5px 0 15px rgba(0,0,0,.4);
+}
+
+.sideBarContent {
+  margin-top: 20px;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Page Editor
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.editDoc {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.page {
+  box-shadow: 0 0 20px rgba(0,0,0,.2);
+  width: 70%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  min-height: 800px;
+  display: flex;
+  justify-content: center;
+}
+
+.docContent {
+  width: 80%;
+  margin-top: 80px;
+}
+
+// TITLE INPUT 
+
+.titleEdit {
+  height: 50px;
+  width: 80%;
+  font-size: 3em;
+  font-size: 3.5vw;
+  border: none;
+  border-bottom: 2px solid lightgray;
+}
+
+.titleEdit::placeholder {
+  color: lightgray;
+  opacity: 1; 
+}
+
+.titleEdit:focus {
+  outline: none;
+}
+
+// ADD BUTTONS
+
+.docAddButtons {
+  width: 100%;
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.docAddButtons button {
+  width: 300px;
+  height: 150px;
+  border: none;
+  color: gray;
+}
+
+.docAddButtons button:hover {
+  border: 2px solid lightgray;
+}
+
+.addButtonsDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 30%;
+}
