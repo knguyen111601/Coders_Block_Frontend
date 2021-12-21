@@ -15,6 +15,15 @@ const SideBar = () =>{
     return <div className="sideBar">
         <div className="sideBarContent">
         <h1>SideBar</h1>
+
+        <Link to="/">
+            <h1>Home</h1>
+        </Link>
+
+        <Link to="/create">
+            <h1>Create</h1>
+        </Link>
+
         <Link to="/signup">
             <h1>Signup</h1>
         </Link>

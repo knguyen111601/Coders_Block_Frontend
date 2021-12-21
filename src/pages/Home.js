@@ -41,7 +41,7 @@ const Home = (props) =>{
                 }
             })
             if (singleBlog.attributes.user_id == id) {
-            return <Link to={`/blog/${singleBlog.id}`} style={{textDecoration:"none", color:"unset"}}>
+            return <Link to={`/${singleBlog.id}`} style={{textDecoration:"none", color:"unset"}}>
             <div className="blogCard">
                     <div className="blogCardContent">
                         <div className="writtenBy">
