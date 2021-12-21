@@ -1,4 +1,9 @@
-$mocha: #967969;
+$mocha: #64473a;
+
+body {
+  background-color: #e9e5e3;
+}
+
 
 .mainSection {
   margin-left: 20%;
@@ -15,12 +20,69 @@ $mocha: #967969;
   height: 100vh;
   width: 20%;
   position: fixed;
-  box-shadow: 5px 0 15px rgba(0,0,0,.4);
+  box-shadow: 5px 0 15px rgba(0,0,0,.3);
 }
 
 .sideBarContent {
   margin-top: 20px;
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Index Page
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.indexPage {
+  width:100vw;
+  height: 100vh;
+  margin-top: 20px;
+}
+
+.blogCard {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background-color: white;
+  width: 80%;
+  height: 220px;
+  margin: auto;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+.blogCard h1 {
+  font-size: 3.5em;
+  margin: 0;
+  transition: 0.2s all;
+}
+
+.blogCard:hover {
+  transform:translate(0, -5px);
+}
+
+.paragraphPeak {
+  color: gray;
+}
+
+.blogCardContent {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.writtenBy {
+  display: flex;
+  align-items: center;
+}
+
+.writtenBy img {
+  width: 30px;
+  height: 30px;
+  border: 1px solid lightgray;
+  border-radius: 50px;
+  margin-right: 10px;
+  margin-left: -30px;
+}
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Page Editor
@@ -95,4 +157,30 @@ $mocha: #967969;
   align-items: center;
   justify-content: space-between;
   height: 30%;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Title Modal
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.modalBackground {
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleModal {
+  height: 300px;
+  width: 700px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
