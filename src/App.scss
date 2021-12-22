@@ -49,7 +49,9 @@ body {
 }
 
 .blogCard h1 {
-  font-size: 3.5em;
+  width: 100%;
+  height: 60px;
+  font-size: 4vw;
   margin: 0;
   transition: 0.2s all;
 }
@@ -105,7 +107,7 @@ body {
 }
 
 .titleOfBlog {
-  font-size: 3em;
+  font-size: 2.5em;
   font-weight: 800;
   margin: 0
 }
@@ -117,7 +119,8 @@ body {
 
 .docContent {
   width: 80%;
-  margin-top: 80px;
+  margin-top: 50px;
+  padding-bottom: 50px;
 }
 
 // TITLE INPUT 
@@ -266,4 +269,15 @@ body {
   height: 20px;
   background-color: lightgray;
   border-radius: 0 50px 50px 0;
+}
+
+.homeEmpty {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background-color: lightgray;
+  width: 80%;
+  height: 220px;
+  margin: auto;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
 }

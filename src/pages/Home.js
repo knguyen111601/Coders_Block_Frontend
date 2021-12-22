@@ -63,10 +63,11 @@ const Home = (props) =>{
     }
 
     const noblogs = <div>
-        <h1>No Blogs Found</h1>
-        <Link to="/edit">
-            <p>Create a blog here!</p>
-        </Link>
+        <div className="homeEmpty"></div>
+        <div className="homeEmpty"></div>
+        <div className="homeEmpty"></div>
+        <div className="homeEmpty"></div>
+        <div className="homeEmpty"></div>
     </div>
 
 

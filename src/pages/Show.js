@@ -1,6 +1,6 @@
 import { GlobalCtx } from "../App"
 import { useState, useContext, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import { get } from "jquery"
 
 const Show = (props) => {
@@ -96,6 +96,9 @@ const Show = (props) => {
     return <div className="editDoc">
         <div className="page">
             <div className="docContent">
+                <Link to={`/edit/${id}`}>
+                    <button>Edit</button>
+                </Link>
                 {blog ? title() : emptyStateTitle}
                 {blog ? content() : emptyStateParagraph}
             </div>
