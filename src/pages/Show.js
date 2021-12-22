@@ -60,7 +60,12 @@ const Show = (props) => {
 
 
     const title = () => {return <>
+        <div style={{display: "flex", justifyContent:"space-between", alignItems:"center"}}>
         <h1 className="titleOfBlog">{blog.data.attributes.title}</h1>
+        <Link to={`/edit/${id}`} style={{width:"20%"}}>
+            <button className="editButton">Edit</button>
+        </Link>
+        </div>
         <p className="author">Written by: {username}</p>
     </>}
 
@@ -96,9 +101,6 @@ const Show = (props) => {
     return <div className="editDoc">
         <div className="page">
             <div className="docContent">
-                <Link to={`/edit/${id}`}>
-                    <button>Edit</button>
-                </Link>
                 {blog ? title() : emptyStateTitle}
                 {blog ? content() : emptyStateParagraph}
             </div>
