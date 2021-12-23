@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# Coder's Block (Blogging Site)
+#### by Kenny Nguyen
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Summary
 
-## Available Scripts
+This web application is a place for users to create and store blogs that they write. 
 
-In the project directory, you can run:
+The tools I will be using are: 
+1. Ruby on Rails
+2. ReactJS
+3. Postgres SQL
 
-### `npm start`
+## Wireframes
+### Site Layout Wireframes
+![alt text](https://i.imgur.com/StuXO59.png)
+### Final 
+![alt text](https://i.imgur.com/e56lT5e.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Models
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+List here any models in your app and their properties 
+Models I will have in my app are:
 
-### `npm test`
+#### Blogs
+The Blogs table contains its a title, its own ID, and a user_id. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Paragraphs & Images 
+The paragraphs and images tables contain a heading, content, subtext, order, and a blog_id. The blog id representing the blog they are attached to.
 
-### `npm run build`
+#### User Profile
+In the user profile model, there is the place for their username, password.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Route Table
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Blog Routes
+| url | method | action |
+|-----|--------|--------|
+| /api/v1/blogs | get | Shows all blogs |
+| /api/v1/blogs | post | Creates new blog |
+| /api/v1/blogs/:id | get | Shows single blog details |
+| /api/v1/blogs/:id | put | Updates single blog details |
+| /api/v1/blogs/:id | delete | Deletes blog |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Paragraph Routes
+| url | method | action |
+|-----|--------|--------|
+| /api/v1/paragraphs | get | Shows all paragraphs |
+| /api/v1/paragraphs | post | Creates new paragraph |
+| /api/v1/paragraphs/:id | get | Shows single paragraph details |
+| /api/v1/paragraphs/:id | put | Updates single paragraph details |
+| /api/v1/paragraphs/:id | delete | Deletes paragraph |
 
-### `npm run eject`
+#### Image Routes
+| url | method | action |
+|-----|--------|--------|
+| /api/v1/images | get | Shows all image |
+| /api/v1/images | post | Creates new image |
+| /api/v1/images/:id | get | Shows single image details |
+| /api/v1/images/:id | put | Updates single image details |
+| /api/v1/images/:id | delete | Deletes image |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### User Routes
+| url | method | action |
+|-----|--------|--------|
+| /signup | post | creates user |
+| /login | post | checks if user exists and logs in |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## User Stories
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-  I should be able to click signup and create an account.
 
-### Code Splitting
+- I should be able to login with an account I've created.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- I should be able to click create and begin making a new blog.
 
-### Analyzing the Bundle Size
+- I should be able to choose the order of my blog contents.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- I should be able to save and publish my blog.
 
-### Making a Progressive Web App
+- I should see my blog on the home page. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- I should be able to click on my blog and view its details.
 
-### Advanced Configuration
+- I should be able to edit my blog.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- I should be able to delete my blog.
 
-### Deployment
+- I should be able to delete or edit specific contents of my blog.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Challenges 
 
-### `npm run build` fails to minify
+- Figuring out has_many and has_one to Ruby on Rails was slighty different than that of Masonite. I had to frequently remake or change migrations to make sure that the items had the right attributes on each of their tables. For example, I needed to make sure that the paragraphs and images would cascade on the deletion of a blog. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Making API out of Ruby on Rails. Ruby on Rails often isn't used to create API's for other frontend frameworks because it has views for itself. What I had to do was serialize each of the tables that I needed in the front end and have them show up under each blog. 
+
+- Accessing information was difficult because any items that were connected to a blog would not show up in the same object as the blog. It would be in a separate "included" array that I'd need to additionally map over in the frontend. This made passing information around quite difficult in the frontend. 
+
+
+
