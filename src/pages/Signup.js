@@ -50,7 +50,7 @@ const Signup = (props) => {
         <form onSubmit={handleSubmit} className="signupForm">
             <h1>Signup</h1>
             <input type="text" name="username" value={form.username} placeholder="Username" onChange={handleChange} className="signupFormText"/>
-            <input type="text" name="password" value={form.password} placeholder="Password" onChange={handleChange} className="signupFormText"/>
+            <input type="password" name="password" value={form.password} placeholder="Password" onChange={handleChange} className="signupFormText"/>
             <input type="submit" value="Signup" className="signupButton"/>
             <Link to="/login">
                 <p className="already">Already have an account? Login here.</p>
