@@ -11,6 +11,14 @@ The tools I will be using are:
 3. Postgres SQL
 
 ## Wireframes
+### Component Tree
+```
+-User
+    -Blogs
+        - Paragraphs/Images
+            - Heading, Content, Subtext, Order, Blog_id
+```
+
 ### Site Layout Wireframes
 ![alt text](https://i.imgur.com/StuXO59.png)
 ### Final 
