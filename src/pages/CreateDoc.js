@@ -169,7 +169,7 @@ const CreateDoc = (props) =>{
     const appendParagraph = <div>
             <form onSubmit={addParagraph} className="formEdit">
                 <input type="text" name="heading" value={newParagraph.heading} placeholder="Heading" onChange={handleChangeParagraph} className="headingEdit"/>
-                <input type="text" name="content" value={newParagraph.content} placeholder="Content" onChange={handleChangeParagraph} className="contentEdit"/>
+                <textarea type="textarea" name="content" value={newParagraph.content} placeholder="Content" onChange={handleChangeParagraph} className="contentEdit"/>
                 <input type="text" name="subtext"  value={newParagraph.subtext} placeholder="Subtext" onChange={handleChangeParagraph} className="subtextEdit"/>
                 <div style={{display:"flex", justifyContent:"center"}}>
                 <button onClick={()=>{
@@ -184,7 +184,7 @@ const CreateDoc = (props) =>{
     const appendImage = <div>
         <form onSubmit={addImage} className="formEdit">
                 <input type="text" name="heading" value={newImage.heading} placeholder="Heading" onChange={handleChangeImage} className="headingEdit"/>
-                <input type="text" name="content" value={newImage.content} placeholder="Image Link" onChange={handleChangeImage} className="contentEdit"/>
+                <input type="text" name="content" value={newImage.content} placeholder="Image Link" onChange={handleChangeImage} className="contentEdit imageLink"/>
                 <input type="text" name="subtext"  value={newImage.subtext} placeholder="Subtext" onChange={handleChangeImage} className="subtextEdit"/>
                 <div style={{display:"flex", justifyContent:"center"}}>
                 <button onClick={()=>{

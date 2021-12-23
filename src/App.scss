@@ -512,12 +512,14 @@ body {
   font-size: 1.5em;
   margin-bottom: 10px;
   text-align: center;
+  margin-top: 20px;
 }
 
 .contentEdit {
   height: max-content;
-  min-height: 50px;
+  min-height: 100px;
   margin-bottom: 10px;
+  font-family: sans-serif;
 }
 
 .subtextEdit {

@@ -47,7 +47,7 @@ const EditBlog = ({heading, content, subtext, order, id, setCreating, blog_id, t
             <button onClick={deleteParagraph} className="deleteButton"><BsFillTrashFill/></button>
             <form onSubmit={putParagraph} className="formEdit">
                 <input type="text" name="heading" value={currentParagraph.heading} placeholder="Heading" onChange={handleChange} className="headingEdit"/>
-                <input type="text" name="content" value={currentParagraph.content} placeholder="Content"  onChange={handleChange} className="contentEdit"/>
+                <textarea type="text" name="content" value={currentParagraph.content} placeholder="Content"  onChange={handleChange} className="contentEdit"/>
                 <input type="text" name="subtext" value={currentParagraph.subtext}  placeholder="Subtext"  onChange={handleChange} className="subtextEdit"/>
                 <input type="submit" value="Update" className="editSubmit"/>
             </form>
