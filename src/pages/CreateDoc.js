@@ -291,10 +291,11 @@ const content = () => {
                 {/* TITLE AND AUTHOR */}
                 {blog ?
                 <div style={{display: "flex", justifyContent:"space-between", alignItems:"center"}}>
-                 <h1 className="titleOfBlog">{blog.data.attributes.title}</h1>
+                <h1 className="titleOfBlog">{blog.data.attributes.title}</h1>
                  <div style={{width: "30%"}}>
                 {id ? <button className="saveButton delete" onClick={deleteBlog}>Delete</button> : null}
-                 {id ? <button className="saveButton" onClick={save}>Save</button> : null}
+                {id ? null : <button style={{visibility:"hidden"}} className="saveButton" onClick={save}>Save</button> }
+                <button className="saveButton" onClick={save}>Save</button>
                  </div>
                 </div>
                   : null}
