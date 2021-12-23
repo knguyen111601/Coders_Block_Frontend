@@ -272,6 +272,16 @@ const content = () => {
         navigate("/")
     }
 
+    const deleteBlog = () =>{
+        fetch(`${url}/api/v1/blogs/${id}`, {
+            method:"delete",
+            headers: {
+                "Authorization": `bearer ${token}`
+            }
+        })
+        navigate("/")
+    }
+
     return <div className="editDoc">
         <div className="page">
             <div className="docContent">
@@ -282,7 +292,10 @@ const content = () => {
                 {blog ?
                 <div style={{display: "flex", justifyContent:"space-between", alignItems:"center"}}>
                  <h1 className="titleOfBlog">{blog.data.attributes.title}</h1>
+                 <div style={{width: "30%"}}>
+                {id ? <button className="saveButton delete" onClick={deleteBlog}>Delete</button> : null}
                  {id ? <button className="saveButton" onClick={save}>Save</button> : null}
+                 </div>
                 </div>
                   : null}
                 <p className="author">Written by: {username}</p>

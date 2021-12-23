@@ -13,7 +13,6 @@ const Home = (props) =>{
     const id = JSON.parse(window.localStorage.getItem("token")).user.id
     const [blogs, setBlogs] = useState(null)
 
-
     const getBlogs = async () =>{
         const response = await fetch(`${url}api/v1/blogs`, {
             method: "get",
@@ -28,7 +27,7 @@ const Home = (props) =>{
     useEffect(()=>{
         // console.log(token)
         getBlogs()
-    }, [])
+    }, [blogs])
 
     const loaded = () => {
         return blogs.data.map((singleBlog)=>{
@@ -40,6 +39,7 @@ const Home = (props) =>{
                     }
                 }
             })
+
             if (singleBlog.attributes.user_id == id) {
             return <Link to={`/${singleBlog.id}`} style={{textDecoration:"none", color:"unset"}}>
             <div className="blogCard">
@@ -77,6 +77,7 @@ const Home = (props) =>{
 
 
     return <div className="indexPage">
+        <h1 className="welcome">Welcome, <span>{username}</span>.</h1>
         {blogs ? loaded() : noblogs}
     </div>
 }

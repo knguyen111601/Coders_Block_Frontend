@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 $mocha: #64473a;
+
 
 body {
   background-color: #e9e5e3;
@@ -11,6 +13,31 @@ body {
   justify-content: center;
 }
 
+.welcome {
+  font-size: 4em;
+  margin-top: 0;
+}
+
+.welcome span {
+  color: $mocha;
+}
+
+@media only screen and (max-width: 1100px) {
+  .mainSection {
+    margin-left: 12%;
+  }
+
+  .welcome {
+    font-size: 2em;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .mainSection {
+    margin-left: 15%;
+  }
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Side Bar
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -18,13 +45,91 @@ body {
 .sideBar {
   background-color: $mocha;
   height: 100vh;
-  width: 20%;
+  width: max-content;
   position: fixed;
   box-shadow: 5px 0 15px rgba(0,0,0,.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .sideBarContent {
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+}
+
+.sideBarContent a h1 {
+  display: flex;
+  align-items: center;
+  font-size: 2em;
+  margin-left: 10px;
+}
+
+.sideBarContent a h1:hover {
+  text-decoration: underline;
+}
+
+.sideBarText {
+  margin-left: 10px;
+  font-size: .5em;
+}
+
+.appNameText {
+  font-size: .6em;
+  font-family: 'Source Code Pro', monospace;
+  margin-top: 5px;
+  margin-left: 0;
+}
+
+.logout {
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 2em;
+  margin-left: 10px;
+}
+
+.logoutSection {
+  border-top: 2px solid #937264;
+}
+
+.logout:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.appName {
+  color: white;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+@media only screen and (max-width: 1100px) {
+  .sideBarText {
+    display: none;
+  }
+
+  .appName {
+    font-size: 1em;
+  }
+
+  .logout {
+    font-size: 1em;
+    margin-left: 10px;
+  }
+
+  .sideBarContent a h1 {
+    font-size: 1em;
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -44,16 +149,25 @@ body {
   width: 80%;
   height: 220px;
   margin: auto;
-  margin-bottom: 10px;
+  margin-top: -10px;
+  margin-bottom: 20px;
   box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+@media only screen and (max-width: 900px) {
+  .blogCard {
+    margin-top: 0;
+  }
 }
 
 .blogCard h1 {
   width: 100%;
   height: 60px;
-  font-size: 4vw;
+  font-size: 4em;
   margin: 0;
   transition: 0.2s all;
+  text-decoration: underline;
+  text-decoration-color: $mocha;
 }
 
 .blogCard:hover {
@@ -84,6 +198,21 @@ body {
   margin-left: -30px;
 }
 
+@media only screen and (max-width: 320px) {
+  .blogCard {
+    width: 90%;
+  }
+  
+  .blogCard h1 {
+    font-size: 3em;
+  }
+
+  .writtenBy img {
+    margin-left: 0;
+  }
+
+}
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -106,8 +235,10 @@ body {
   justify-content: center;
 }
 
+
 .titleOfBlog {
-  font-size: 2.5em;
+  font-size: 3em;
+  max-width: 70%;
   font-weight: 800;
   margin: 0
 }
@@ -118,10 +249,26 @@ body {
 }
 
 .docContent {
-  width: 80%;
+  width: 70%;
   margin-top: 50px;
   padding-bottom: 50px;
 }
+
+
+@media only screen and (max-width: 900px) {
+  .page {
+    width: 90%;
+  }
+
+  .titleOfBlog {
+    font-size: 2em;
+  }
+
+  .pHeader {
+    font-size: 1.3em;
+  }
+}
+
 
 // TITLE INPUT 
 
@@ -155,7 +302,7 @@ body {
 }
 
 .docAddButtons button {
-  width: 300px;
+  width: 230px;
   height: 150px;
   border: none;
   color: gray;
@@ -197,6 +344,53 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.titleModalForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleModalFormText {
+  border: none;
+  border-bottom: 1px solid $mocha;
+  margin-bottom: 10px;
+  height: 50px;
+  width: 400px;
+  text-align: center;
+  font-size: 2em;
+}
+
+.titleModalSubmit {
+  width: 100px;
+  height: 30px;
+  font-size: 1em;
+  margin: auto;
+  background-color: $mocha;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+.cancel {
+  margin-left: -90%;
+  border: none;
+  background-color: transparent;
+  font-size: 1em;
+}
+
+.cancel:hover {
+  transform: scale(1.3);
+}
+
+@media only screen and (max-width: 900px) {
+  .titleModalFormText {
+    width: 200px;
+  }
+
+  .titleModal {
+    width: 80%;
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -286,7 +480,7 @@ body {
 // Edit Blog
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 .editDiv {
-
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -349,7 +543,7 @@ body {
 }
 
 .saveButton {
-  width: 20%;
+  width: 40%;
   height: 30px;
   border-radius: 10px;
   border: none;
@@ -358,12 +552,22 @@ body {
   transition: 0.2s all;
 }
 
+.delete {
+  background-color: firebrick;
+  margin-right: 5px;
+}
+
 .saveButton:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
 
-
+@media only screen and (max-width: 800px) {
+  .saveButton {
+    width: 50px;
+    margin-bottom: 10px;
+  }
+}
 
 .editButton {
   width: 100%;
@@ -381,7 +585,13 @@ body {
 }
 
 .editImage {
-  width: 50%;
+  width: 80%;
+}
+
+@media only screen and (max-width: 800px) {
+  .editImage {
+    width: 100%;
+  }
 }
 
 .cancelButton {
@@ -392,4 +602,63 @@ body {
   background-color: $mocha;
   color: white;
   transition: 0.2s all;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Edit Blog
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.signup {
+  width: 100%;
+  height: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.signupForm {
+  margin-top: 50px;
+  height: 500px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.signupFormText {
+  border: none;
+  border-bottom: 1px solid $mocha;
+  background-color: transparent;
+  height: 20px;
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.signupButton {
+  background-color: $mocha;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  width: 30%;
+  height: 30px;
+  font-size: 1em;
+}
+
+.already {
+  font-size: .8em;
+}
+
+@media only screen and (max-width: 900px) {
+  .signupForm {
+    width: 80%;
+    height: 400px;
+  }
+
+  .already {
+    font-size: .5em;
+  };
+
 }

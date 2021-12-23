@@ -44,13 +44,13 @@ const Show = (props) => {
         return order.map((singleItem)=>{
             if (singleItem.type == "paragraph") {
                 return <div>
-                    <h1>{singleItem.attributes.heading}</h1>
+                    <h1 className="pHeader">{singleItem.attributes.heading}</h1>
                     <p className="paragraph">{singleItem.attributes.content}</p>
                     <p className="paragraphSubText">{singleItem.attributes.subtext}</p>
                 </div>
             } else if (singleItem.type == "image") {
                 return <div>
-                    <h1>{singleItem.attributes.heading}</h1>
+                    <h1 className="pHeader">{singleItem.attributes.heading}</h1>
                     <img className="image" src={singleItem.attributes.content}/>
                     <p className="paragraphSubText">{singleItem.attributes.subtext}</p>
                 </div>
